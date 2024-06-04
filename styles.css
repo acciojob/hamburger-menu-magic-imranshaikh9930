@@ -7,7 +7,7 @@
 body {
   overflow-x: hidden;
 }
-.ham {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,17 +26,17 @@ body {
   list-style-type: none;
   margin: 0 15px;
 }
-.hamburger {
+.ham {
   display: none;
 }
-.hamburger .bar {
+.ham .bar {
   width: 35px;
   height: 5px;
   margin: 5px 0;
   background-color: black;
 }
 @media screen and (max-width: 425px) {
-  .ham {
+  .container {
     width: 100%;
     height: 10vh;
     padding: 15px;
@@ -58,12 +58,12 @@ body {
     right: -5%;
   }
 
-  .hamburger {
+  .ham {
     display: block;
     /* Adding transition */
   }
 
-  .hamburger .bar {
+  .ham .bar {
     width: 35px;
     height: 5px;
     background-color: black;
@@ -71,15 +71,15 @@ body {
     transition: all 0.3s ease-in-out;
   }
 
-  .hamburger.active .bar:first-child {
+  .ham.active .bar:first-child {
     transform: translateY(6px) rotate(45deg);
   }
 
-  .hamburger.active .bar:last-child {
+  .ham.active .bar:last-child {
     transform: translateY(-6px) rotate(-45deg);
   }
 
-  .hamburger.active .bar:nth-child(2) {
+  .ham.active .bar:nth-child(2) {
     display: none;
   }
 }
