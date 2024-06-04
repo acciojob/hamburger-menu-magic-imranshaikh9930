@@ -1,1 +1,85 @@
 /*  your css code here. If applicable */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  padding: 15px;
+  background-color: rgb(208, 208, 32);
+  color: white;
+  font-weight: 800;
+  /* position: relative; */
+}
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0 15px;
+}
+.hamburger {
+  display: none;
+}
+.hamburger .bar {
+  width: 35px;
+  height: 5px;
+  margin: 5px 0;
+  background-color: black;
+}
+@media screen and (max-width: 425px) {
+  #container {
+    width: 100%;
+    height: 10vh;
+    padding: 15px;
+  }
+
+  .list__item {
+    position: absolute;
+    flex-direction: column;
+    color: black;
+    top: 10%;
+    right: -50%;
+    background-color: skyblue;
+    padding: 15px;
+    border-bottom-left-radius: 15px;
+    transition: all 0.3s ease-in-out; /* Adding transition */
+  }
+
+  .active {
+    right: -4%;
+  }
+
+  .hamburger {
+    display: block;
+    /* Adding transition */
+  }
+
+  .hamburger .bar {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger.active .bar:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    display: none;
+  }
+}
